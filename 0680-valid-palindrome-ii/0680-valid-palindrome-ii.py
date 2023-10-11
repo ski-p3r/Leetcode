@@ -3,13 +3,12 @@ class Solution:
         def is_palindrome(substring):
             return substring == substring[::-1]
 
-        p1 = 0
-        p2 = len(s) - 1
+        left = 0
+        right = len(s)-1
 
-        while p1 <= p2:
-            if s[p1] != s[p2]:
-                return is_palindrome(s[p1:p2]) or is_palindrome(s[p1+1:p2+1])
-            p1 += 1
-            p2 -= 1
-
+        while left < right:
+            if s[left] != s[right]:
+                return is_palindrome(s[left:right]) or is_palindrome(s[left+1:right+1])
+            left += 1
+            right -=1
         return True
